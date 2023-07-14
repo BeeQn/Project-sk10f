@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
-
+const express = require('express');
+const app = express();
 // Rota para cadastro de usuários
 app.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;

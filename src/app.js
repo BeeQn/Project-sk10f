@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+
 const app = express();
 
 
@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configuração das rotas
-const authController = require('./controllers/authController');
-const userController = require('./controllers/userController');
+const authController = require('../controllers/authControllers');
+//const userController = require('../controllers/userController');
 app.post('/signup', authController.signup);
 app.post('/login', authController.login);
 app.get('/balance', userController.getBalance);
